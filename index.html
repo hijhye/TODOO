@@ -11,9 +11,9 @@
     <div class="container">
       <!--왼-->
       <div class="left">
-        <div>
+        <div id="addTask">
           <h1>TO<br />DO</h1>
-          <button id="add">(<span>할 일 추가</span>)</button>
+          <div>(<span>할 일 추가</span>)</div>
         </div>
         <div></div>
         <div class="txt">
@@ -25,110 +25,19 @@
       <!--오-->
       <div class="right">
         <ul class="tab">
-          <li>모두</li>
-          <li>아직</li>
-          <li>다함</li>
+          <li id="all" class="on">모두</li>
+          <li id="going">아직</li>
+          <li id="done">다함</li>
         </ul>
 
-        <ul id="taskBoard">
-          <li>
-            <div class="taskBox">
-              <p>할일<br />작성<br />짠</p>
-              <p>현재시간</p>
-            </div>
-            <div class="status">
-              <div>x</div>
-              <div>v</div>
-            </div>
-          </li>
-          <li>
-            <div class="taskBox">
-              <p>할일<br />작성<br />짠</p>
-              <p>현재시간</p>
-            </div>
-            <div class="status">
-              <div>x</div>
-              <div>v</div>
-            </div>
-          </li>
-          <li>
-            <div class="taskBox">
-              <p>할일<br />작성<br />짠</p>
-              <p>현재시간</p>
-            </div>
-            <div class="status">
-              <div>x</div>
-              <div>v</div>
-            </div>
-          </li>
-          <li>
-            <div class="taskBox">
-              <p>할일<br />작성<br />짠</p>
-              <p>현재시간</p>
-            </div>
-            <div class="status">
-              <div>x</div>
-              <div>v</div>
-            </div>
-          </li>
-          <li>
-            <div class="taskBox">
-              <p>할일<br />작성<br />짠</p>
-              <p>현재시간</p>
-            </div>
-            <div class="status">
-              <div>x</div>
-              <div>v</div>
-            </div>
-          </li>
-          <li>
-            <div class="taskBox">
-              <p>할일<br />작성<br />짠</p>
-              <p>현재시간</p>
-            </div>
-            <div class="status">
-              <div>x</div>
-              <div>v</div>
-            </div>
-          </li>
-          <li>
-            <div class="taskBox">
-              <p>할일<br />작성<br />짠</p>
-              <p>현재시간</p>
-            </div>
-            <div class="status">
-              <div>x</div>
-              <div>v</div>
-            </div>
-          </li>
-          <li>
-            <div class="taskBox">
-              <p>할일<br />작성<br />짠</p>
-              <p>현재시간</p>
-            </div>
-            <div class="status">
-              <div>x</div>
-              <div>v</div>
-            </div>
-          </li>
-          <li>
-            <div class="taskBox">
-              <p>할일<br />작성<br />짠</p>
-              <p>현재시간</p>
-            </div>
-            <div class="status">
-              <div>x</div>
-              <div>v</div>
-            </div>
-          </li>
-        </ul>
+        <ul id="taskBoard"></ul>
 
         <div class="today">
           <div class="todayleft">
-            <div id="month">NOV</div>
-            <div id="year">2025</div>
+            <div id="month"></div>
+            <div id="year"></div>
           </div>
-          <div id="day">13</div>
+          <div id="day"></div>
         </div>
 
         <div class="addContainer">

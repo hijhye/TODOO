@@ -54,7 +54,7 @@ h1 {
   font-family: "JejuStoneWall";
   color: #d0e05d;
 }
-#add {
+#addTask {
   font-family: "OngleipParkDahyeon";
   background-color: transparent;
   border: none;
@@ -62,7 +62,7 @@ h1 {
   color: #d0e05d;
   cursor: pointer;
 }
-#add span {
+#addTask span {
   color: #000;
   margin: 0px 20px;
   font-size: 2.2vw;
@@ -91,7 +91,14 @@ h1 {
   justify-content: center;
   font-size: 2vw;
 }
+.tab li {
+  cursor: pointer;
+  color: rgba(0, 0, 0, 0.4);
+}
 
+.right .tab li.on {
+  color: #000;
+}
 /*task*/
 .right #taskBoard {
   display: flex;
@@ -100,7 +107,6 @@ h1 {
   width: 100%;
   height: 80vh;
   overflow-y: auto;
-  border: 1px solid #000;
   margin: 30px 0;
   align-content: flex-start;
 }
@@ -112,6 +118,7 @@ h1 {
   width: calc((100% / 3) - 6.7px);
   aspect-ratio: 1;
   display: flex;
+  gap: 10px;
   justify-content: space-between;
   padding: 30px;
   box-sizing: border-box;
@@ -119,12 +126,51 @@ h1 {
   border: 1px solid #000;
 }
 .right #taskBoard li .taskBox,
-.right #taskBoard li .status {
+.right #taskBoard li .buttonBox {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
+.right #taskBoard li button {
+  background-color: transparent;
+  border: none;
+  font-size: 4vw;
+  font-family: "OngleipParkDahyeon";
+}
+.right #taskBoard li .complete {
+  cursor: pointer;
+}
+.right #taskBoard li .taskTxt {
+  font-size: 1.5vw;
+  line-height: 160%;
+  overflow-y: auto;
+}
+.right #taskBoard li .taskTxt::-webkit-scrollbar {
+  display: none;
+}
+.right #taskBoard li .ampm {
+  font-size: 1.2vw;
+}
+.right #taskBoard li .time {
+  font-size: 1.8vw;
+  margin-left: 10px;
+}
+/*deleteReady*/
+.right #taskBoard li.deleteReady {
+  background-color: #e9f591;
+}
+.right #taskBoard li .deleteTask {
+  opacity: 0;
+}
+.right #taskBoard li.deleteReady .deleteTask {
+  opacity: 1;
+  cursor: pointer;
+}
 
+/*done*/
+.right #taskBoard li.done {
+  background-color: #d0e05d;
+}
 /*today*/
 .right .today {
   font-family: "JejuStoneWall";
@@ -149,23 +195,39 @@ h1 {
   left: -100%;
   background-color: #fff;
   border: 1px solid #000;
-  width: 80vw;
+  width: 75vw;
   display: flex;
   flex-direction: column;
   padding: 30px;
   box-sizing: border-box;
   border-radius: 0px 10px 10px 0px;
+  transition: 1s;
+  gap: 50px;
+}
+.right .addContainer.on {
+  left: 0;
 }
 
 .right .addContainer .close {
   text-align: right;
+  cursor: pointer;
+  font-size: 3vw;
+  font-weight: 800;
+  color: #666;
+}
+.right .addContainer .close:hover {
+  color: #000;
+}
+.right .addContainer #save {
+  cursor: pointer;
+  font-size: 3vw;
+  font-weight: 800;
 }
 .right .addContainer .inputContainer {
   display: flex;
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  margin-top: 20px;
 }
 .right .addContainer .inputContainer #user {
   width: 90%;
