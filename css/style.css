@@ -29,6 +29,9 @@ ul {
   font-display: swap;
 }
 
+body {
+  word-break: keep-all;
+}
 /*start*/
 @media (max-width: 720px) {
   .container {
