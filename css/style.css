@@ -29,9 +29,6 @@ ul {
   font-display: swap;
 }
 
-body {
-  word-break: keep-all;
-}
 /*start*/
 @media (max-width: 720px) {
   .container {
@@ -713,6 +710,7 @@ body {
     flex-direction: column;
     justify-content: space-between;
   }
+
   .right #taskBoard li button {
     background-color: transparent;
     border: none;
