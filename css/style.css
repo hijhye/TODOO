@@ -1,0 +1,177 @@
+* {
+  margin: 0px;
+  padding: 0px;
+}
+ul {
+  list-style: none;
+}
+
+/*font*/
+@font-face {
+  font-family: "JejuStoneWall";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2210-EF@1.0/EF_jejudoldam.woff2")
+    format("woff2");
+  font-weight: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "OngleipParkDahyeon";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/2411-3@1.0/Ownglyph_ParkDaHyun.woff2")
+    format("woff2");
+  font-weight: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "YunaSTuesday";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/2506-1@1.0/TheTuesdayofYounah.woff2")
+    format("woff2");
+  font-weight: normal;
+  font-display: swap;
+}
+
+/*start*/
+.container {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+}
+
+/*left*/
+.left {
+  width: 20%;
+  /* background-color: #ccc; */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  padding: 10vh 0;
+  box-sizing: border-box;
+  border-right: 1px solid #000;
+}
+h1 {
+  font-size: 5vw;
+  font-family: "JejuStoneWall";
+  color: #d0e05d;
+}
+#add {
+  font-family: "OngleipParkDahyeon";
+  background-color: transparent;
+  border: none;
+  font-size: 2vw;
+  color: #d0e05d;
+  cursor: pointer;
+}
+#add span {
+  color: #000;
+  margin: 0px 20px;
+  font-size: 2.2vw;
+}
+.left .txt {
+  font-family: "YunaSTuesday";
+  font-size: 2.5vw;
+}
+
+/*right*/
+.right {
+  width: 80%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 5vh 5vw;
+  box-sizing: border-box;
+  font-family: "OngleipParkDahyeon";
+  position: relative;
+  overflow-x: hidden;
+}
+.right .tab {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  font-size: 2vw;
+}
+
+/*task*/
+.right #taskBoard {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  width: 100%;
+  height: 80vh;
+  overflow-y: auto;
+  border: 1px solid #000;
+  margin: 30px 0;
+  align-content: flex-start;
+}
+.right #taskBoard::-webkit-scrollbar {
+  display: none;
+}
+.right #taskBoard li {
+  background-color: #fff;
+  width: calc((100% / 3) - 6.7px);
+  aspect-ratio: 1;
+  display: flex;
+  justify-content: space-between;
+  padding: 30px;
+  box-sizing: border-box;
+  border-radius: 10px;
+  border: 1px solid #000;
+}
+.right #taskBoard li .taskBox,
+.right #taskBoard li .status {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/*today*/
+.right .today {
+  font-family: "JejuStoneWall";
+  display: flex;
+  justify-content: right;
+  color: rgba(0, 0, 0, 0.5);
+}
+.right .todayleft {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-size: 3vw;
+}
+.right .today #day {
+  font-size: 6.5vw;
+}
+
+/*addcontainer*/
+.right .addContainer {
+  position: absolute;
+  bottom: 10vh;
+  left: -100%;
+  background-color: #fff;
+  border: 1px solid #000;
+  width: 80vw;
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+  box-sizing: border-box;
+  border-radius: 0px 10px 10px 0px;
+}
+
+.right .addContainer .close {
+  text-align: right;
+}
+.right .addContainer .inputContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 20px;
+}
+.right .addContainer .inputContainer #user {
+  width: 90%;
+  font-family: "JejuStoneWall";
+  border: none;
+  border-bottom: 1px solid #000;
+  font-size: 2vw;
+  padding-bottom: 10px;
+}
