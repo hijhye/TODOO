@@ -30,248 +30,747 @@ ul {
 }
 
 /*start*/
-.container {
-  display: flex;
-  width: 100%;
-  height: 100vh;
+@media (max-width: 720px) {
+  .container {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+  }
+
+  /*left*/
+  .left {
+    width: 20%;
+    /* background-color: #ccc; */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    padding: 10vh 0;
+    box-sizing: border-box;
+    border-right: 1px solid #000;
+  }
+  h1 {
+    font-size: 5vh;
+    font-family: "JejuStoneWall";
+    color: #d0e05d;
+  }
+  #addTask {
+    font-family: "OngleipParkDahyeon";
+    background-color: transparent;
+    border: none;
+    font-size: 4vw;
+    color: #d0e05d;
+    cursor: pointer;
+  }
+  #addTask span {
+    color: #000;
+    margin: 0px 10px;
+    font-size: 4vw;
+  }
+
+  .left .imgWrap {
+    padding: 50px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .left .imgWrap img {
+    width: 50px;
+    display: none;
+  }
+  .left .imgWrap img.on {
+    display: block;
+  }
+
+  .left .txt {
+    font-family: "YunaSTuesday";
+    font-size: 5vw;
+  }
+
+  /*right*/
+  .right {
+    width: 80%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 5vh 5vw;
+    box-sizing: border-box;
+    font-family: "OngleipParkDahyeon";
+    position: relative;
+    overflow-x: hidden;
+    background: url(../img/smile.png), url(../img/smile.png),
+      url(../img/smile.png);
+    background-repeat: no-repeat;
+    background-size: 100px, 200px, 150px;
+    background-attachment: fixed;
+    background-position: left 40% bottom 2%, right -3% top 20%, left 25% top -5%;
+  }
+  .right .tab {
+    display: flex;
+    gap: 20px;
+    justify-content: right;
+    font-size: 2.5vh;
+  }
+  .tab li {
+    position: relative;
+    cursor: pointer;
+    color: rgba(0, 0, 0, 0.4);
+    padding-top: 15px;
+  }
+
+  .right .tab li.on {
+    color: #000;
+  }
+  .right .tab li.on::before {
+    content: "*";
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 20px;
+    height: 20px;
+  }
+  /*task*/
+  .right #taskBoard {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 80vh;
+    overflow-y: auto;
+    margin: 30px 0;
+    align-content: flex-start;
+  }
+  .right #taskBoard::-webkit-scrollbar {
+    display: none;
+  }
+  .right #taskBoard li {
+    background-color: #fff;
+    width: 100%;
+    display: flex;
+    gap: 10px;
+    justify-content: space-between;
+    padding: 30px;
+    box-sizing: border-box;
+    border-radius: 10px;
+    border: 1px solid #000;
+  }
+  .right #taskBoard li .taskBox,
+  .right #taskBoard li .buttonBox {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .right #taskBoard li button {
+    background-color: transparent;
+    border: none;
+    font-size: 4vh;
+    font-family: "OngleipParkDahyeon";
+  }
+  .right #taskBoard li .complete {
+    cursor: pointer;
+    color: rgba(0, 0, 0, 0.4);
+  }
+  .right #taskBoard li .taskTxt {
+    font-size: 2vh;
+    line-height: 160%;
+    overflow-y: auto;
+    margin-bottom: 20px;
+  }
+  .right #taskBoard li .taskTxt::-webkit-scrollbar {
+    display: none;
+  }
+  .right #taskBoard li .ampm {
+    font-size: 1.8vh;
+  }
+  .right #taskBoard li .time {
+    font-size: 1.8svh;
+    margin-left: 10px;
+  }
+  /*deleteReady*/
+  .right #taskBoard li.deleteReady {
+    background-color: #e9f591;
+  }
+  .right #taskBoard li .deleteTask {
+    opacity: 0;
+  }
+  .right #taskBoard li.deleteReady .deleteTask {
+    opacity: 1;
+    cursor: pointer;
+  }
+
+  /*done*/
+  .right #taskBoard li.done {
+    background-color: #d0e05d;
+  }
+  .right #taskBoard li.done .complete {
+    color: #000;
+  }
+  /*today*/
+  .right .today {
+    font-family: "JejuStoneWall";
+    display: flex;
+    justify-content: right;
+    color: rgba(0, 0, 0, 0.5);
+  }
+  .right .todayleft {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    font-size: 3vw;
+  }
+  .right .today #day {
+    font-size: 7.5vw;
+  }
+
+  /*addcontainer*/
+  .right .addContainer {
+    position: absolute;
+    bottom: 10vh;
+    left: -100%;
+    background-color: #fff;
+    border: 1px solid #000;
+    border-left: none;
+    width: 65vw;
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+    box-sizing: border-box;
+    border-radius: 0px 10px 10px 0px;
+    transition: 1s;
+    gap: 50px;
+  }
+  .right .addContainer.on {
+    left: 0;
+  }
+
+  .right .addContainer .close {
+    text-align: right;
+    cursor: pointer;
+    font-size: 3vw;
+    font-weight: 800;
+    color: #666;
+  }
+  .right .addContainer .close:hover {
+    color: #000;
+  }
+  .right .addContainer #save {
+    cursor: pointer;
+    font-size: 3vw;
+    font-weight: 800;
+  }
+  .right .addContainer .inputContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+  }
+  .right .addContainer .inputContainer #user {
+    width: 90%;
+    font-family: "JejuStoneWall";
+    border: none;
+    border-bottom: 1px solid #000;
+    font-size: 2vh;
+    padding-bottom: 10px;
+  }
 }
 
-/*left*/
-.left {
-  width: 20%;
-  /* background-color: #ccc; */
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  text-align: center;
-  padding: 10vh 0;
-  box-sizing: border-box;
-  border-right: 1px solid #000;
-}
-h1 {
-  font-size: 5vw;
-  font-family: "JejuStoneWall";
-  color: #d0e05d;
-}
-#addTask {
-  font-family: "OngleipParkDahyeon";
-  background-color: transparent;
-  border: none;
-  font-size: 2vw;
-  color: #d0e05d;
-  cursor: pointer;
-}
-#addTask span {
-  color: #000;
-  margin: 0px 20px;
-  font-size: 2.2vw;
+@media (min-width: 720px) and (max-width: 1220px) {
+  .container {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+  }
+
+  /*left*/
+  .left {
+    width: 20%;
+    /* background-color: #ccc; */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    padding: 10vh 0;
+    box-sizing: border-box;
+    border-right: 1px solid #000;
+  }
+  h1 {
+    font-size: 5vh;
+    font-family: "JejuStoneWall";
+    color: #d0e05d;
+  }
+  #addTask {
+    font-family: "OngleipParkDahyeon";
+    background-color: transparent;
+    border: none;
+    font-size: 3vw;
+    color: #d0e05d;
+    cursor: pointer;
+  }
+  #addTask span {
+    color: #000;
+    margin: 0px 20px;
+    font-size: 3vw;
+  }
+
+  .left .imgWrap {
+    padding: 50px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .left .imgWrap img {
+    width: 50px;
+    display: none;
+  }
+  .left .imgWrap img.on {
+    display: block;
+  }
+
+  .left .txt {
+    font-family: "YunaSTuesday";
+    font-size: 2.5vw;
+  }
+
+  /*right*/
+  .right {
+    width: 80%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 5vh 5vw;
+    box-sizing: border-box;
+    font-family: "OngleipParkDahyeon";
+    position: relative;
+    overflow-x: hidden;
+    background: url(../img/smile.png), url(../img/smile.png),
+      url(../img/smile.png);
+    background-repeat: no-repeat;
+    background-size: 100px, 200px, 150px;
+    background-attachment: fixed;
+    background-position: left 40% bottom 2%, right -3% top 20%, left 25% top -5%;
+  }
+  .right .tab {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    font-size: 2vw;
+  }
+  .tab li {
+    position: relative;
+    cursor: pointer;
+    color: rgba(0, 0, 0, 0.4);
+    padding-top: 15px;
+  }
+
+  .right .tab li.on {
+    color: #000;
+  }
+  .right .tab li.on::before {
+    content: "*";
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 20px;
+    height: 20px;
+  }
+  /*task*/
+  .right #taskBoard {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 80vh;
+    overflow-y: auto;
+    margin: 30px 0;
+    align-content: flex-start;
+  }
+  .right #taskBoard::-webkit-scrollbar {
+    display: none;
+  }
+  .right #taskBoard li {
+    background-color: #fff;
+    width: calc((100% / 2) - 10px);
+    aspect-ratio: 1;
+    display: flex;
+    gap: 10px;
+    justify-content: space-between;
+    padding: 30px;
+    box-sizing: border-box;
+    border-radius: 10px;
+    border: 1px solid #000;
+  }
+  .right #taskBoard li .taskBox,
+  .right #taskBoard li .buttonBox {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .right #taskBoard li button {
+    background-color: transparent;
+    border: none;
+    font-size: 4vw;
+    font-family: "OngleipParkDahyeon";
+  }
+  .right #taskBoard li .complete {
+    cursor: pointer;
+    color: rgba(0, 0, 0, 0.4);
+  }
+  .right #taskBoard li .taskTxt {
+    font-size: 2vh;
+    line-height: 160%;
+    overflow-y: auto;
+    margin-bottom: 20px;
+  }
+  .right #taskBoard li .taskTxt::-webkit-scrollbar {
+    display: none;
+  }
+  .right #taskBoard li .ampm {
+    font-size: 1.8vh;
+  }
+  .right #taskBoard li .time {
+    font-size: 1.8vh;
+    margin-left: 10px;
+  }
+  /*deleteReady*/
+  .right #taskBoard li.deleteReady {
+    background-color: #e9f591;
+  }
+  .right #taskBoard li .deleteTask {
+    opacity: 0;
+  }
+  .right #taskBoard li.deleteReady .deleteTask {
+    opacity: 1;
+    cursor: pointer;
+  }
+
+  /*done*/
+  .right #taskBoard li.done {
+    background-color: #d0e05d;
+  }
+  .right #taskBoard li.done .complete {
+    color: #000;
+  }
+  /*today*/
+  .right .today {
+    font-family: "JejuStoneWall";
+    display: flex;
+    justify-content: right;
+    color: rgba(0, 0, 0, 0.5);
+  }
+  .right .todayleft {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    font-size: 3vw;
+  }
+  .right .today #day {
+    font-size: 7.5vw;
+  }
+
+  /*addcontainer*/
+  .right .addContainer {
+    position: absolute;
+    bottom: 10vh;
+    left: -100%;
+    background-color: #fff;
+    border: 1px solid #000;
+    border-left: none;
+    width: 65vw;
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+    box-sizing: border-box;
+    border-radius: 0px 10px 10px 0px;
+    transition: 1s;
+    gap: 50px;
+  }
+  .right .addContainer.on {
+    left: 0;
+  }
+
+  .right .addContainer .close {
+    text-align: right;
+    cursor: pointer;
+    font-size: 3vw;
+    font-weight: 800;
+    color: #666;
+  }
+  .right .addContainer .close:hover {
+    color: #000;
+  }
+  .right .addContainer #save {
+    cursor: pointer;
+    font-size: 3vw;
+    font-weight: 800;
+  }
+  .right .addContainer .inputContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+  }
+  .right .addContainer .inputContainer #user {
+    width: 90%;
+    font-family: "JejuStoneWall";
+    border: none;
+    border-bottom: 1px solid #000;
+    font-size: 2vh;
+    padding-bottom: 10px;
+  }
 }
 
-.left .imgWrap {
-  padding: 50px;
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 10px;
-}
-.left .imgWrap img {
-  width: 50px;
-  display: none;
-}
-.left .imgWrap img.on {
-  display: block;
-}
+@media (min-width: 1220px) {
+  .container {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+  }
 
-.left .txt {
-  font-family: "YunaSTuesday";
-  font-size: 2.5vw;
-}
+  /*left*/
+  .left {
+    width: 20%;
+    /* background-color: #ccc; */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    padding: 10vh 0;
+    box-sizing: border-box;
+    border-right: 1px solid #000;
+  }
+  h1 {
+    font-size: 5vw;
+    font-family: "JejuStoneWall";
+    color: #d0e05d;
+  }
+  #addTask {
+    font-family: "OngleipParkDahyeon";
+    background-color: transparent;
+    border: none;
+    font-size: 2vw;
+    color: #d0e05d;
+    cursor: pointer;
+  }
+  #addTask span {
+    color: #000;
+    margin: 0px 20px;
+    font-size: 2.2vw;
+  }
 
-/*right*/
-.right {
-  width: 80%;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  padding: 5vh 5vw;
-  box-sizing: border-box;
-  font-family: "OngleipParkDahyeon";
-  position: relative;
-  overflow-x: hidden;
-  background: url(../img/smile.png), url(../img/smile.png),
-    url(../img/smile.png);
-  background-repeat: no-repeat;
-  background-size: 100px, 200px, 150px;
-  background-attachment: fixed;
-  background-position: left 40% bottom 2%, right -3% top 20%, left 25% top -5%;
-}
-.right .tab {
-  display: flex;
-  gap: 20px;
-  justify-content: center;
-  font-size: 2vw;
-}
-.tab li {
-  position: relative;
-  cursor: pointer;
-  color: rgba(0, 0, 0, 0.4);
-  padding-top: 15px;
-}
+  .left .imgWrap {
+    padding: 50px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .left .imgWrap img {
+    width: 50px;
+    display: none;
+  }
+  .left .imgWrap img.on {
+    display: block;
+  }
 
-.right .tab li.on {
-  color: #000;
-}
-.right .tab li.on::before {
-  content: "*";
-  position: absolute;
-  top: -10px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 20px;
-  height: 20px;
-}
-/*task*/
-.right #taskBoard {
-  display: flex;
-  gap: 10px;
-  flex-wrap: wrap;
-  width: 100%;
-  height: 80vh;
-  overflow-y: auto;
-  margin: 30px 0;
-  align-content: flex-start;
-}
-.right #taskBoard::-webkit-scrollbar {
-  display: none;
-}
-.right #taskBoard li {
-  background-color: #fff;
-  width: calc((100% / 3) - 6.7px);
-  aspect-ratio: 1;
-  display: flex;
-  gap: 10px;
-  justify-content: space-between;
-  padding: 30px;
-  box-sizing: border-box;
-  border-radius: 10px;
-  border: 1px solid #000;
-}
-.right #taskBoard li .taskBox,
-.right #taskBoard li .buttonBox {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-.right #taskBoard li button {
-  background-color: transparent;
-  border: none;
-  font-size: 4vw;
-  font-family: "OngleipParkDahyeon";
-}
-.right #taskBoard li .complete {
-  cursor: pointer;
-  color: rgba(0, 0, 0, 0.4);
-}
-.right #taskBoard li .taskTxt {
-  font-size: 1.5vw;
-  line-height: 160%;
-  overflow-y: auto;
-}
-.right #taskBoard li .taskTxt::-webkit-scrollbar {
-  display: none;
-}
-.right #taskBoard li .ampm {
-  font-size: 1.2vw;
-}
-.right #taskBoard li .time {
-  font-size: 1.8vw;
-  margin-left: 10px;
-}
-/*deleteReady*/
-.right #taskBoard li.deleteReady {
-  background-color: #e9f591;
-}
-.right #taskBoard li .deleteTask {
-  opacity: 0;
-}
-.right #taskBoard li.deleteReady .deleteTask {
-  opacity: 1;
-  cursor: pointer;
-}
+  .left .txt {
+    font-family: "YunaSTuesday";
+    font-size: 2.5vw;
+  }
 
-/*done*/
-.right #taskBoard li.done {
-  background-color: #d0e05d;
-}
-.right #taskBoard li.done .complete {
-  color: #000;
-}
-/*today*/
-.right .today {
-  font-family: "JejuStoneWall";
-  display: flex;
-  justify-content: right;
-  color: rgba(0, 0, 0, 0.5);
-}
-.right .todayleft {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  font-size: 3vw;
-}
-.right .today #day {
-  font-size: 7.5vw;
-}
+  /*right*/
+  .right {
+    width: 80%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 5vh 5vw;
+    box-sizing: border-box;
+    font-family: "OngleipParkDahyeon";
+    position: relative;
+    overflow-x: hidden;
+    background: url(../img/smile.png), url(../img/smile.png),
+      url(../img/smile.png);
+    background-repeat: no-repeat;
+    background-size: 100px, 200px, 150px;
+    background-attachment: fixed;
+    background-position: left 40% bottom 2%, right -3% top 20%, left 25% top -5%;
+  }
+  .right .tab {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    font-size: 2vw;
+  }
+  .tab li {
+    position: relative;
+    cursor: pointer;
+    color: rgba(0, 0, 0, 0.4);
+    padding-top: 15px;
+  }
 
-/*addcontainer*/
-.right .addContainer {
-  position: absolute;
-  bottom: 10vh;
-  left: -100%;
-  background-color: #fff;
-  border: 1px solid #000;
-  border-left: none;
-  width: 65vw;
-  display: flex;
-  flex-direction: column;
-  padding: 30px;
-  box-sizing: border-box;
-  border-radius: 0px 10px 10px 0px;
-  transition: 1s;
-  gap: 50px;
-}
-.right .addContainer.on {
-  left: 0;
-}
+  .right .tab li.on {
+    color: #000;
+  }
+  .right .tab li.on::before {
+    content: "*";
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 20px;
+    height: 20px;
+  }
+  /*task*/
+  .right #taskBoard {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 80vh;
+    overflow-y: auto;
+    margin: 30px 0;
+    align-content: flex-start;
+  }
+  .right #taskBoard::-webkit-scrollbar {
+    display: none;
+  }
+  .right #taskBoard li {
+    background-color: #fff;
+    width: calc((100% / 3) - 6.7px);
+    aspect-ratio: 1;
+    display: flex;
+    gap: 10px;
+    justify-content: space-between;
+    padding: 30px;
+    box-sizing: border-box;
+    border-radius: 10px;
+    border: 1px solid #000;
+  }
+  .right #taskBoard li .taskBox,
+  .right #taskBoard li .buttonBox {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .right #taskBoard li button {
+    background-color: transparent;
+    border: none;
+    font-size: 4vw;
+    font-family: "OngleipParkDahyeon";
+  }
+  .right #taskBoard li .complete {
+    cursor: pointer;
+    color: rgba(0, 0, 0, 0.4);
+  }
+  .right #taskBoard li .taskTxt {
+    font-size: 1.5vw;
+    line-height: 160%;
+    overflow-y: auto;
+  }
+  .right #taskBoard li .taskTxt::-webkit-scrollbar {
+    display: none;
+  }
+  .right #taskBoard li .ampm {
+    font-size: 1.2vw;
+  }
+  .right #taskBoard li .time {
+    font-size: 1.8vw;
+    margin-left: 10px;
+  }
+  /*deleteReady*/
+  .right #taskBoard li.deleteReady {
+    background-color: #e9f591;
+  }
+  .right #taskBoard li .deleteTask {
+    opacity: 0;
+  }
+  .right #taskBoard li.deleteReady .deleteTask {
+    opacity: 1;
+    cursor: pointer;
+  }
 
-.right .addContainer .close {
-  text-align: right;
-  cursor: pointer;
-  font-size: 3vw;
-  font-weight: 800;
-  color: #666;
-}
-.right .addContainer .close:hover {
-  color: #000;
-}
-.right .addContainer #save {
-  cursor: pointer;
-  font-size: 3vw;
-  font-weight: 800;
-}
-.right .addContainer .inputContainer {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 100%;
-}
-.right .addContainer .inputContainer #user {
-  width: 90%;
-  font-family: "JejuStoneWall";
-  border: none;
-  border-bottom: 1px solid #000;
-  font-size: 2vw;
-  padding-bottom: 10px;
+  /*done*/
+  .right #taskBoard li.done {
+    background-color: #d0e05d;
+  }
+  .right #taskBoard li.done .complete {
+    color: #000;
+  }
+  /*today*/
+  .right .today {
+    font-family: "JejuStoneWall";
+    display: flex;
+    justify-content: right;
+    color: rgba(0, 0, 0, 0.5);
+  }
+  .right .todayleft {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    font-size: 3vw;
+  }
+  .right .today #day {
+    font-size: 7.5vw;
+  }
+
+  /*addcontainer*/
+  .right .addContainer {
+    position: absolute;
+    bottom: 10vh;
+    left: -100%;
+    background-color: #fff;
+    border: 1px solid #000;
+    border-left: none;
+    width: 65vw;
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+    box-sizing: border-box;
+    border-radius: 0px 10px 10px 0px;
+    transition: 1s;
+    gap: 50px;
+  }
+  .right .addContainer.on {
+    left: 0;
+  }
+
+  .right .addContainer .close {
+    text-align: right;
+    cursor: pointer;
+    font-size: 3vw;
+    font-weight: 800;
+    color: #666;
+  }
+  .right .addContainer .close:hover {
+    color: #000;
+  }
+  .right .addContainer #save {
+    cursor: pointer;
+    font-size: 3vw;
+    font-weight: 800;
+  }
+  .right .addContainer .inputContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+  }
+  .right .addContainer .inputContainer #user {
+    width: 90%;
+    font-family: "JejuStoneWall";
+    border: none;
+    border-bottom: 1px solid #000;
+    font-size: 2vw;
+    padding-bottom: 10px;
+  }
 }
