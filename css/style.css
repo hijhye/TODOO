@@ -42,7 +42,7 @@ body {
 
   /*left*/
   .left {
-    width: 20%;
+    width: 30%;
     /* background-color: #ccc; */
     display: flex;
     flex-direction: column;
@@ -66,10 +66,21 @@ body {
     color: #d0e05d;
     cursor: pointer;
   }
+  #addTask div {
+    padding: 3px 10px;
+    border-radius: 10px;
+    background-color: #d0e05d;
+    color: #fff;
+    margin-top: 10px;
+    transition: 0.1s;
+  }
+
+  #addTask:hover div {
+    background-color: #6b6fe5;
+  }
+
   #addTask span {
-    color: #000;
-    margin: 0px 10px;
-    font-size: 4vw;
+    display: none;
   }
 
   .left .imgWrap {
@@ -183,6 +194,10 @@ body {
     overflow-y: auto;
     margin-bottom: 20px;
   }
+  .right #taskBoard li .taskTxt strong {
+    font-size: 2.2vh;
+    color: #6b6fe5;
+  }
   .right #taskBoard li .taskTxt::-webkit-scrollbar {
     display: none;
   }
@@ -290,7 +305,7 @@ body {
 
   /*left*/
   .left {
-    width: 20%;
+    width: 30%;
     /* background-color: #ccc; */
     display: flex;
     flex-direction: column;
@@ -302,7 +317,7 @@ body {
     border-right: 1px solid #000;
   }
   h1 {
-    font-size: 5vh;
+    font-size: 8vh;
     font-family: "JejuStoneWall";
     color: #d0e05d;
   }
@@ -314,12 +329,27 @@ body {
     color: #d0e05d;
     cursor: pointer;
   }
-  #addTask span {
-    color: #000;
-    margin: 0px 20px;
-    font-size: 3vw;
+  #addTask div {
+    padding: 3px 5px;
+    border-radius: 10px;
+    background-color: #d0e05d;
+    color: #fff;
+    margin-top: 10px;
+    transition: 0.1s;
   }
 
+  #addTask span {
+    color: #fff;
+    margin: 0px 10px;
+    font-size: 3vw;
+  }
+  #addTask:hover div {
+    background-color: #6b6fe5;
+  }
+  #addTask:hover span {
+    background-color: #6b6fe5;
+    color: #d2d3fd;
+  }
   .left .imgWrap {
     padding: 50px;
     display: flex;
@@ -431,6 +461,10 @@ body {
     line-height: 160%;
     overflow-y: auto;
     margin-bottom: 20px;
+  }
+  .right #taskBoard li .taskTxt strong {
+    font-size: 2.2vh;
+    color: #6b6fe5;
   }
   .right #taskBoard li .taskTxt::-webkit-scrollbar {
     display: none;
@@ -563,12 +597,26 @@ body {
     color: #d0e05d;
     cursor: pointer;
   }
+  #addTask div {
+    margin-top: 10px;
+    padding: 3px 5px;
+    border-radius: 10px;
+    background-color: #d0e05d;
+    color: #fff;
+    transition: 0.1s;
+  }
+
   #addTask span {
-    color: #000;
+    color: #e9f591;
     margin: 0px 20px;
     font-size: 2.2vw;
   }
-
+  #addTask:hover div {
+    background-color: #6b6fe5;
+  }
+  #addTask:hover span {
+    color: #d2d3fd;
+  }
   .left .imgWrap {
     padding: 50px;
     display: flex;
@@ -676,9 +724,13 @@ body {
     color: rgba(0, 0, 0, 0.4);
   }
   .right #taskBoard li .taskTxt {
-    font-size: 1.5vw;
+    font-size: 1.4vw;
     line-height: 160%;
     overflow-y: auto;
+  }
+  .right #taskBoard li .taskTxt strong {
+    font-size: 1.6vw;
+    color: #6b6fe5;
   }
   .right #taskBoard li .taskTxt::-webkit-scrollbar {
     display: none;
