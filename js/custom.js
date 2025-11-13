@@ -284,7 +284,7 @@ user.addEventListener("keydown", function (e) {
 taskList = [
   {
     id: randomId(),
-    taskContent: ` <p class="taskTxt">왼쪽 <strong>TODO</strong>(할 일 추가)를 클릭하여 할 일을 추가하세요.<br> 할 일이 기록된 카드를 한번 클릭하면 목록에서 삭제할 수 있습니다.<br> 할 일을 완수하면 카드 오른쪽 하단에 있는 체크를 클릭하여 꽃을 모아보세요!</p>`,
+    taskContent: ` <p class="taskTxt">왼쪽 <strong>TODO</strong>(+ 할 일)를 클릭하여 할 일을 추가하세요.<br> 할 일이 기록된 카드를 한번 클릭하면 목록에서 삭제할 수 있습니다.<br> 할 일을 완수하면 카드 오른쪽 하단에 있는 체크를 클릭하여 꽃을 모아보세요!</p>`,
     isComplete: false,
     time: currentTime(),
     min: currentMin(),

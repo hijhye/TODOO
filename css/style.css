@@ -66,14 +66,14 @@ ul {
   #addTask div {
     padding: 3px 10px;
     border-radius: 10px;
-    background-color: #d0e05d;
+    background-color: #6b6fe5;
     color: #fff;
     margin-top: 10px;
     transition: 0.1s;
   }
 
   #addTask:hover div {
-    background-color: #6b6fe5;
+    background-color: #d0e05d;
   }
 
   #addTask span {
@@ -329,22 +329,22 @@ ul {
   #addTask div {
     padding: 3px 5px;
     border-radius: 10px;
-    background-color: #d0e05d;
+    background-color: #6b6fe5;
     color: #fff;
     margin-top: 10px;
     transition: 0.1s;
   }
 
   #addTask span {
-    color: #fff;
+    color: #d2d3fd;
     margin: 0px 10px;
     font-size: 3vw;
   }
   #addTask:hover div {
-    background-color: #6b6fe5;
+    background-color: #d0e05d;
   }
   #addTask:hover span {
-    color: #d2d3fd;
+    color: #fff;
   }
   .left .imgWrap {
     padding: 50px;
@@ -594,24 +594,24 @@ ul {
     cursor: pointer;
   }
   #addTask div {
-    margin-top: 10px;
+    margin-top: 20px;
     padding: 3px 5px;
     border-radius: 10px;
-    background-color: #d0e05d;
+    background-color: #6b6fe5;
     color: #fff;
     transition: 0.1s;
   }
 
   #addTask span {
-    color: #e9f591;
+    color: #d2d3fd;
     margin: 0px 20px;
     font-size: 2.2vw;
   }
   #addTask:hover div {
-    background-color: #6b6fe5;
+    background-color: #d0e05d;
   }
   #addTask:hover span {
-    color: #d2d3fd;
+    color: #e9f591;
   }
   .left .imgWrap {
     padding: 50px;
