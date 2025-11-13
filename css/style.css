@@ -108,7 +108,7 @@ ul {
 
   /*right*/
   .right {
-    width: 80%;
+    width: 70%;
     height: 100vh;
     display: flex;
     flex-direction: column;
@@ -382,7 +382,7 @@ ul {
 
   /*right*/
   .right {
-    width: 80%;
+    width: 70%;
     height: 100vh;
     display: flex;
     flex-direction: column;
