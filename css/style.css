@@ -67,6 +67,22 @@ h1 {
   margin: 0px 20px;
   font-size: 2.2vw;
 }
+
+.left .imgWrap {
+  padding: 50px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.left .imgWrap img {
+  width: 50px;
+  display: none;
+}
+.left .imgWrap img.on {
+  display: block;
+}
+
 .left .txt {
   font-family: "YunaSTuesday";
   font-size: 2.5vw;
@@ -84,6 +100,12 @@ h1 {
   font-family: "OngleipParkDahyeon";
   position: relative;
   overflow-x: hidden;
+  background: url(../img/smile.png), url(../img/smile.png),
+    url(../img/smile.png);
+  background-repeat: no-repeat;
+  background-size: 100px, 200px, 150px;
+  background-attachment: fixed;
+  background-position: left 40% bottom 2%, right -3% top 20%, left 25% top -5%;
 }
 .right .tab {
   display: flex;
@@ -92,12 +114,23 @@ h1 {
   font-size: 2vw;
 }
 .tab li {
+  position: relative;
   cursor: pointer;
   color: rgba(0, 0, 0, 0.4);
+  padding-top: 15px;
 }
 
 .right .tab li.on {
   color: #000;
+}
+.right .tab li.on::before {
+  content: "*";
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 20px;
+  height: 20px;
 }
 /*task*/
 .right #taskBoard {
@@ -139,6 +172,7 @@ h1 {
 }
 .right #taskBoard li .complete {
   cursor: pointer;
+  color: rgba(0, 0, 0, 0.4);
 }
 .right #taskBoard li .taskTxt {
   font-size: 1.5vw;
@@ -171,6 +205,9 @@ h1 {
 .right #taskBoard li.done {
   background-color: #d0e05d;
 }
+.right #taskBoard li.done .complete {
+  color: #000;
+}
 /*today*/
 .right .today {
   font-family: "JejuStoneWall";
@@ -185,7 +222,7 @@ h1 {
   font-size: 3vw;
 }
 .right .today #day {
-  font-size: 6.5vw;
+  font-size: 7.5vw;
 }
 
 /*addcontainer*/
@@ -195,7 +232,8 @@ h1 {
   left: -100%;
   background-color: #fff;
   border: 1px solid #000;
-  width: 75vw;
+  border-left: none;
+  width: 65vw;
   display: flex;
   flex-direction: column;
   padding: 30px;

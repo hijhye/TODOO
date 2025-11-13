@@ -107,30 +107,50 @@ let user = document.querySelector("#user"),
 
 let taskList = [];
 
+user.addEventListener("focus", () => {
+  user.value = "";
+});
 save.addEventListener("click", addTask);
 function addTask() {
-  task = {
-    id: randomId(),
-    taskContent: user.value,
-    isComplete: false,
-    time: current().getHours(),
-    min: current().getMinutes(),
-  };
+  if (!user.value) {
+    user.value = "해야할 일을 작성 후 저장해주세요 @_@";
+    return;
+  } else {
+    task = {
+      id: randomId(),
+      taskContent: user.value,
+      isComplete: false,
+      time: currentTime(),
+      min: currentMin(),
+      ampm: currentAmpm(),
+    };
 
-  taskList.push(task);
-  console.log(taskList);
+    taskList.unshift(task);
+    console.log(taskList);
 
-  render();
+    render();
+    addContainer.classList.remove("on");
+    add.classList.remove("off");
+  }
   user.value = "";
-  addContainer.classList.remove("on");
-  add.classList.remove("off");
 }
 
 function randomId() {
   return Date.now();
 }
-function current() {
-  return new Date();
+function currentTime() {
+  let day = new Date();
+  time = day.getHours() % 12;
+  return time < 12 ? "0" + time : time;
+}
+function currentMin() {
+  let day = new Date();
+  time = day.getMinutes();
+  return time < 12 ? "0" + time : time;
+}
+function currentAmpm() {
+  let day = new Date();
+  return day.getHours() >= 12 ? "pm" : "am";
 }
 function render() {
   result = "";
@@ -146,7 +166,7 @@ function render() {
       result += `<li onclick="deleteReady(this)" class="done">
          <div class="taskBox">
               <p class="taskTxt">${task.taskContent}
-              <p class="ampm">AM<span class="time">${task.time}:${task.min}</span></p>
+              <p class="ampm">${task.ampm}<span class="time">${task.time}:${task.min}</span></p>
             </div>
          <div class="buttonBox">
              <button class="deleteTask" onclick="deleteTask(event, ${task.id})">x</button>
@@ -157,7 +177,7 @@ function render() {
       result += `<li onclick="deleteReady(this)">
          <div class="taskBox">
               <p class="taskTxt">${task.taskContent}
-              <p class="ampm">AM<span class="time">${task.time}:${task.min}</span></p>
+              <p class="ampm">${task.ampm}<span class="time">${task.time}:${task.min}</span></p>
             </div>
         <div class="buttonBox">
              <button class="deleteTask" onclick="deleteTask(event, ${task.id})">x</button>
@@ -189,6 +209,20 @@ function complete(event, id) {
     }
   });
   filter();
+
+  let currentCompletedCount = taskList.filter(
+    (task) => task.isComplete === true
+  ).length;
+
+  let flowers = document.querySelectorAll(".left .imgWrap img");
+
+  flowers.forEach((flower, index) => {
+    if (index < currentCompletedCount) {
+      flower.classList.add("on");
+    } else {
+      flower.classList.remove("on");
+    }
+  });
 }
 
 //5
@@ -238,7 +272,7 @@ function deleteReady(clicked) {
 }
 
 //업박스 올라와있을 때만 엔터키로 투두리스트 업로드하기
-user.addEventListener("keypress", function (e) {
+user.addEventListener("keydown", function (e) {
   if (e.key === "Enter") {
     if (addContainer.classList.contains("on")) {
       addTask();
@@ -250,10 +284,11 @@ user.addEventListener("keypress", function (e) {
 taskList = [
   {
     id: randomId(),
-    taskContent: ` <p class="taskTxt">왼쪽 TODO(할 일 추가)를 클릭하여 할 일을 추가하세요. 할 일이 기록된 카드를 한번 클릭하면 목록에서 삭제할 수 있습니다. 할 일을 완수하면 카드 오른쪽 하단에 있는 체크를 클릭하여 꽃을 모아보세요!</p>`,
+    taskContent: ` <p class="taskTxt">왼쪽 TODO(할 일 추가)를 클릭하여 할 일을 추가하세요.<br> 할 일이 기록된 카드를 한번 클릭하면 목록에서 삭제할 수 있습니다.<br> 할 일을 완수하면 카드 오른쪽 하단에 있는 체크를 클릭하여 꽃을 모아보세요!</p>`,
     isComplete: false,
-    time: current().getHours(),
-    min: current().getMinutes(),
+    time: currentTime(),
+    min: currentMin(),
+    ampm: currentAmpm(),
   },
 ];
 render();
