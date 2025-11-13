@@ -746,8 +746,12 @@ body {
   .right #taskBoard li.deleteReady {
     background-color: #e9f591;
   }
+  .right #taskBoard li.deleteReady .deleteTask {
+    pointer-events: auto;
+  }
   .right #taskBoard li .deleteTask {
     opacity: 0;
+    pointer-events: none;
   }
   .right #taskBoard li.deleteReady .deleteTask {
     opacity: 1;
