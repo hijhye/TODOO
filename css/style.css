@@ -264,8 +264,10 @@ ul {
     left: 0;
   }
 
-  .right .addContainer .close {
+  .right .addContainer .closeContainer {
     text-align: right;
+  }
+  .right .addContainer .close {
     cursor: pointer;
     font-size: 3vw;
     font-weight: 800;
@@ -533,8 +535,10 @@ ul {
     left: 0;
   }
 
-  .right .addContainer .close {
+  .right .addContainer .closeContainer {
     text-align: right;
+  }
+  .right .addContainer .close {
     cursor: pointer;
     font-size: 3vw;
     font-weight: 800;
@@ -806,8 +810,10 @@ ul {
     left: 0;
   }
 
-  .right .addContainer .close {
+  .right .addContainer .closeContainer {
     text-align: right;
+  }
+  .right .addContainer .close {
     cursor: pointer;
     font-size: 3vw;
     font-weight: 800;
