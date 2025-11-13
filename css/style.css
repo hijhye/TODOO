@@ -81,11 +81,13 @@ ul {
   }
 
   .left .imgWrap {
+    width: 50px;
     padding: 50px;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
     gap: 10px;
+    box-sizing: border-box;
   }
   .left .imgWrap img {
     width: 50px;
@@ -347,11 +349,13 @@ ul {
     color: #fff;
   }
   .left .imgWrap {
+    width: 50px;
     padding: 50px;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
     gap: 10px;
+    box-sizing: border-box;
   }
   .left .imgWrap img {
     width: 50px;
@@ -614,11 +618,13 @@ ul {
     color: #e9f591;
   }
   .left .imgWrap {
+    width: 50px;
     padding: 50px;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
     gap: 10px;
+    box-sizing: border-box;
   }
   .left .imgWrap img {
     width: 50px;
