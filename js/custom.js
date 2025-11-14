@@ -141,7 +141,8 @@ function randomId() {
 function currentTime() {
   let day = new Date();
   time = day.getHours();
-  return time == 12 ? 12 : time % 12 < 10 ? "0" + time : time % 12;
+  let hour12 = time % 12 === 0 ? 12 : time % 12;
+  return hour12 < 10 ? "0" + hour12 : hour12;
 }
 function currentMin() {
   let day = new Date();
