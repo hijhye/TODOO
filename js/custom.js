@@ -140,13 +140,13 @@ function randomId() {
 }
 function currentTime() {
   let day = new Date();
-  time = day.getHours() % 12;
-  return time < 12 ? "0" + time : time;
+  time = day.getHours();
+  return time == 12 ? 12 : time % 12 < 10 ? "0" + time : time % 12;
 }
 function currentMin() {
   let day = new Date();
   time = day.getMinutes();
-  return time < 12 ? "0" + time : time;
+  return time < 10 ? "0" + time : time;
 }
 function currentAmpm() {
   let day = new Date();
